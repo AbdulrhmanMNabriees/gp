@@ -1,0 +1,790 @@
+/* Calling the Fonts */
+@font-face{
+    font-family: 'IBM light';
+    src: url(../fonts/IBMPlexSans-Light.ttf);
+}
+@font-face{
+    font-family: 'IBM regular';
+    src: url(../fonts/IBMPlexSans-Regular.ttf);
+}
+@font-face{
+    font-family: 'IBM semi';
+    src: url(../fonts/IBMPlexSans-SemiBold.ttf);
+}
+@font-face{
+    font-family: 'IBM bold';
+    src: url(../fonts/IBMPlexSans-Bold.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body{
+    scroll-behavior: smooth;
+    font-family: 'IBM regular';
+    background-color: #161D31;
+    min-height: 100vh;
+}
+a{
+    text-decoration: none;
+}
+
+/* Loading Page */
+.loading-page{
+    width: 100%;
+    min-height: 100vh;
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.loading-page .loader{
+    height: 60px;
+    width: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    border: 3px solid #474ECE;
+    opacity: 1;
+    animation: spinner4 800ms linear infinite;
+}
+    @keyframes spinner4 {
+    to {
+    transform: scale(1.5);
+    opacity: 0;
+    }
+}
+.wrapper{
+    /* display: none; */
+    padding: 80px 0 20px;
+    min-height: 100vh;
+}
+
+/* Start Login Page */
+.wrapper.login{
+    padding: 0;
+}
+.main-page.login{
+    min-height: 100vh;
+}
+.login .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.login .form{
+    background-color: #283046;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    padding: 30px 22px;
+}
+.login .form .title{
+    text-align: center;
+    color: #D0D2D6;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    font-size: 28px;
+}
+.login .form .field{
+    margin-bottom: 25px;
+}
+.login .form .field.password{
+    margin-bottom: 10px;
+}
+.form .field label,
+.form .field .input,
+.form .field textarea{
+    display: inline-block;
+    width: 100%;
+}
+.form .field label{
+    line-height: 1.5;
+    font-size: 14px;
+    color: #D0D2D6;
+}
+.form .field .input,
+.form .field textarea{
+    padding: 8px 8px;
+    border: none;
+    border: 1px solid #D0D2D6;
+    border-radius: 5px;
+    background: none;
+    font-size: 16px;
+    outline: none;
+    color: #DDD;
+}
+.login .form .error{
+    margin-bottom: 5px;
+}
+.login .form .forget{
+    text-align: right;
+    font-size: 14px;
+    color: #7367f0;
+}
+.login .form .btns-div{
+    text-align: center;
+    margin-top: 30px;
+}
+.form .btns-div .btn.login-btn{
+    background-color: #7367F0;
+    color: #FFF;
+    padding: 8px 20px;
+    width: 100%;
+    font-family: 'IBM semi';
+    letter-spacing: 2px;
+}
+.form .btns-div .btn.login-btn:hover{
+    box-shadow: 0 8px 25px -8px #7367f0;
+}
+
+/* Start Page Header */
+.wrapper .page-header{
+    background-color: #283046;
+    min-height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 24px 0 rgba(38, 45, 51, 0.502);
+    z-index: 9999;
+}
+.wrapper .page-header .container{
+    min-height: 70px;
+}
+.page-header .navbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 70px;
+}
+.page-header .navbar-brand{
+    color: #7367F0;
+    font-size: 23px;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    letter-spacing: 1px;
+}
+.page-header .navbar-brand img{
+    margin-right: 10px;
+}
+.page-header .navbar .right-side{
+    position: relative;
+}
+.page-header .navbar .right-side .btn.pers-img img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: center center;
+}
+.page-header .navbar .right-side .menu-list{
+    position: absolute;
+    top: 85px;
+    right: 0;
+    padding: 10px 20px;
+    width: 180px;
+    background-color: #3d4969;
+    box-shadow: 0 0px 15px rgba(49, 49, 49, 0.2);
+    border-radius: 10px;
+    transition: .7s;
+    visibility: hidden;
+    opacity: 0;
+}
+.page-header .navbar .right-side .menu-list.active{
+    top: 70px;
+    visibility: visible;
+    opacity: 1;
+}
+.page-header .navbar .right-side .menu-list::before{
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: #3d4969;
+    position: absolute;
+    top: -5px;
+    right: 50%;
+    transform: translate(50%, 0) rotate(45deg);
+}
+.navbar .right-side .menu-list .info{
+    font-size: 18px;
+    text-align: center;
+    padding: 15px 0;
+    font-family: 'IBM semi';
+    color: #DDD ;
+}
+.navbar .right-side .menu-list .info .job-name{
+    font-size: 15px;
+    color: #b3b3b3;
+    font-family: 'IBM regular';
+}
+.navbar .right-side .menu-list .item{
+    list-style-type: none;
+}
+.navbar .right-side .menu-list .item-link{
+    padding: 5px 0;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    color: #FFF;
+    text-decoration: none;
+    transition: .5s;
+}
+.navbar .right-side .menu-list .item-link .item-name{
+    transition: transform .5s;
+}
+.navbar .right-side .menu-list .item-link .icon{
+    font-size: 18px;
+    margin-right: 8px;
+    opacity: .4;
+    transition: opacity .5s;
+}
+.navbar .right-side .menu-list .item-link:hover .icon{
+    opacity: 1;
+}
+.navbar .right-side .menu-list .item-link:hover .item-name{
+    transform: translateX(5px);
+    transition: .5s;
+}
+.page-header .navbar .right-side .menu-btn{
+    font-size: 22px;
+    color: #FFF;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sidebar Style */
+.page-header .sidebar{
+    position: fixed;
+    top: 0;
+    left: -290px;
+    bottom: 0;
+    width: 290px;
+    background-color: #283046;
+    z-index: 9999;
+    transition: left .6s;
+}
+.page-header .sidebar.show{
+    left: 0;
+}
+.page-header .sidebar .top-side{
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidebar .top-side .close-btn{
+    color: #7367F0;
+    font-size: 25px;
+}
+/* Bottom Sidebar */
+.page-header .sidebar .bottom-side{
+    padding: 15px;
+    /* overflow-y: scroll; */
+}
+.sidebar .bottom-side .side-list .item{
+    list-style-type: none;
+    margin-bottom: 2px;
+}
+.bottom-side .side-list .item .item-link,
+.bottom-side .side-list .item .n-item .item-link{
+    display: inline-block;
+    width: 100%;
+    padding: 12px 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-family: 'IBM light';
+    color: #EEE;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+.bottom-side .side-list .item .item-link:hover,
+.bottom-side .side-list .item.active .item-link.dropdown-list{
+    background-color: #161d31;
+}
+.bottom-side .side-list .item .item-link .icon{
+    margin-right: 10px;
+    opacity: .5;
+    transition: color .5s, margin-right .5s;
+}
+.bottom-side .side-list .item .item-link:hover .icon{
+    margin-right: 18px;
+    opacity: 1;
+}
+
+/* DropDown Mney (Nisted List) */
+.bottom-side .side-list .item .n-list{
+    display: none;
+}
+.bottom-side .side-list .item .n-list{
+    margin-top: 5px;
+}
+.bottom-side .side-list .item .n-item{
+    list-style-type: none;
+}
+.bottom-side .side-list .item .n-item .item-link{
+    padding-left: 35px;
+}
+.bottom-side .side-list .item .item-link.dropdown-list .dr-icon{
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    transform: translateY(-50%);
+    transition: transform .5s;
+}
+.bottom-side .side-list .item.active .item-link.dropdown-list .dr-icon{
+    transform:  translateY(-50%) rotate(90deg);
+}
+
+/* Overlay Div */
+.page-header .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(34,41,47,.5);
+    backdrop-filter: blur(3px);
+    transition: opacity .6s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.page-header .overlay.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Start Home Page */
+.main-page .new-sec{
+    margin: 35px 0;
+}
+
+.home .new-sec .title-div{
+    margin-bottom: 15px;
+}
+.home .new-sec .title-div .sec-title,
+.home .new-sec .card-title{
+    color: #d0d2d6;
+    font-size: 20px;
+}
+
+/* Style Statics sectoin */
+.home .statistics-sec{
+    padding: 28px 35px;
+    background-color: #283046;
+    border-radius: 7px;
+}
+.home .statistics-sec .single-card{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.home .statistics-sec .single-card .card-icon{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.statistics-sec .single-card.sales .card-icon{
+    background-color: rgba(115,103,240,.12);
+    color: #7367f0;
+}
+.statistics-sec .single-card.customers .card-icon{
+    background-color: rgba(0,207,232,.12);
+    color: #00cfe8;
+}
+.statistics-sec .single-card.templates .card-icon{
+    background-color: rgba(234,84,85,.12);
+    color: #ea5455;
+}
+.statistics-sec .single-card.revenue .card-icon{
+    background-color: rgba(40,199,111,.12);
+    color: #28c76f;
+}
+
+.statistics-sec .single-card .card-body{
+    color: #d0d2d6;
+}
+.statistics-sec .single-card .card-body .card-num{
+    font-family: 'IBM semi';
+    font-size: 20px;
+}
+.statistics-sec .single-card .card-body .card-name{
+    font-size: 14px;
+    font-family: 'IBM light';
+    letter-spacing: .5px;
+}
+.home .charts-sec .clm{
+    margin-bottom: 35px;
+}
+.home .charts-sec .card{
+    background-color: #283046;
+    padding: 20px;
+    height: 100%;
+}
+
+/* Start Edit_User and Edit_Customer Page */
+.form-content{
+    margin: 35px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-user{
+    width: 100%;
+    max-width: 650px;
+    background-color: #283046;
+    padding: 30px 15px;
+    border-radius: 7px;
+}
+.all-form{
+    padding-left: 15px;
+}
+.page-title{
+    color: #d0d2d6;
+    font-size: 25px;
+    font-family: 'IBM regular';
+    margin-bottom: 25px;
+}
+.lab-name{
+    /* padding-left: 15px; */
+    color: #D0D2D6;
+    font-size: 17px;
+    font-family: 'IBM regular';
+    /* margin-bottom: 10px; */
+}
+.radio-seller{
+    margin-left: 20px;
+}
+.para-exist, .para-invalid, .para-empty{
+    padding-left: 15px;
+    color: red;
+    margin-top: 10px;
+    display: none;
+}
+.div-inp{
+    margin-top: 15px;
+}
+#cust{
+    margin-left: 30px;
+}
+.name-radio{
+    color: #D0D2D6;
+}
+.input-user{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px 8px;
+    border: none;
+    border: 1px solid #D0D2D6;
+    border-radius: 5px;
+    background: none;
+    font-size: 16px;
+    outline: none;
+    color: #DDD;
+}
+.input-user:focus{
+    background: none;
+}
+.btn-add-user{
+    width: 150px;
+    height: 45px;
+    background: #7367F0;
+    color: #fff;
+    border: none;
+    border-radius: 10px; 
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.btn-add-user:hover{
+    box-shadow: 0 8px 25px -8px #7367f0;
+    cursor: pointer;
+}
+.div-input-user{
+    margin-top: 35px;
+}
+.para-exist, .para-invalid, .para-empty{
+    padding-left: 15px;
+    color: red;
+    margin-top: 10px;
+    display: none;
+}
+/* End Edit_User and Edit_Customer Page */
+
+/* Start style Add template page */
+.add-edit-tem .form-con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-edit-tem .form-con .form{
+    width: 100%;
+    max-width: 650px;
+    background-color: #283046;
+    padding: 30px 15px;
+    border-radius: 7px;
+}
+.add-edit-tem .form .form-title{
+    color: #d0d2d6;
+    font-size: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.add-edit-tem .form .field{
+    margin-bottom: 25px;
+}
+.add-edit-tem .form .field textarea{
+    min-height: 100px;
+}
+.add-edit-tem .form .field.upload{
+    color: transparent;
+    user-select: none;
+    margin-bottom: -10px;
+}
+.add-edit-tem .form label{
+    font-size: 17px;
+}
+.fileuploader{
+    padding: 0;
+    background-color: transparent;
+}
+.fileuploader-input{
+    align-items: center;
+}
+.fileuploader-input .fileuploader-input-caption{
+    border: 1px dashed ;
+    background-color: transparent;
+}
+.fileuploader-input .fileuploader-input-caption,
+.fileuploader-input .fileuploader-input-button{
+    border-radius: 5px;
+}
+.add-edit-tem .form .field .net{
+    margin-bottom: 0;
+    color: #FFF;
+    margin-top: 10px;
+}
+.add-edit-tem .form .field .net .btn.tip{
+    padding: 3px;
+    width: 17px;
+    height: 17px;
+    font-size: 9px;
+    background-color: #474ECE;
+    border-radius: 50%;
+    display: inline-flex;
+    color: #FFF;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3px;
+    margin-left: 5px;
+}
+.tooltip.top .tooltip-arrow{
+    border-color: #474ECE;
+}
+.tooltip-inner{
+    background-color: #474ECE;
+}
+.add-edit-tem .form .btns-div{
+    text-align: right;
+    padding: 15px 0;
+}
+.add-edit-tem .form .btns-div .btn{
+    background-color: #7367f0;
+    color: #D0D2D6;
+    padding: 6px 25px;
+}
+.add-edit-tem .form .btns-div .btn:hover{
+    box-shadow: 0 8px 25px -8px #7367f0;
+}
+
+
+/* Style Categories and Customers Page */
+/* Start Page Categories */
+table{
+    width: 100%;
+    text-align: center;
+    color: #EEE;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow: hidden;
+}
+table th{
+    background-color: #343D55;
+    color: #FFF;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'IBM light';
+}
+table tbody td{
+    color: #b4b7bd;
+    padding: 7px;
+    border: none;
+}
+table tbody tr{
+    border: 1px solid #343D55;
+}
+table tr:nth-child(even){
+    background-color: #242B3D;
+}
+table tr:nth-child(odd):hover{
+    background-color: #283046;
+}
+table tr:hover{
+    background-color: #283046;
+}
+.cstmrs-btns{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+.cstmrs-btns .cst-btn{
+    color: #DDD;
+    border: 1px solid rgba(221, 221, 221, 0.26);
+    padding: 4px 15px;
+}
+.cstmrs-btns .cst-btn:hover,
+.cstmrs-btns .cst-btn.active{
+    background-color: rgba(0,207,232,.12);
+}
+
+.ser-div{
+    padding: 5px 0; 
+    display: flex;
+    flex-direction: row;
+}
+.search-icon{
+    position: absolute;
+    font-size: 18px;
+    right: 73px;
+    line-height: 2.7;
+    background: none;
+    border: 0px;
+    color: #6b76b7;
+    padding: 0 15px;
+}
+.action-icon{
+    background-color: transparent;
+    color: #FFF;
+    font-size: 18px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 0;
+    text-align: center;
+    color: #7367f0;
+}
+
+.action-icon.edit-icon:hover{
+    background-color: #31375A;
+}
+.action-icon.dlt-icon:hover{
+    color: #ea5455;
+    background-color: rgba(234, 84, 85, 0.12);
+}
+.action-icon.lock-icon:hover{
+    color: #00cfe8;
+    background-color: rgba(0,207,232,.12);
+}
+.action-icon:hover{
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.filter-icon{
+    background-color: #283046;
+    color: #6b76b7;
+    font-size: 23px;
+    padding: 1px 15px;
+    border-radius: 5px;
+    border: 0;
+    line-height: 2;
+    outline: 0;
+    text-align: center;
+}
+.filter-icon:hover{
+    background-color: #394464;
+}
+.search-box{
+    width: 100%;
+    background-color: #283046;
+    border-radius: 5px;
+    outline: 0;
+    border: none;
+    padding: 10px 15px;
+    color: #999999;
+}
+.sort-icon{
+    background: none;
+    color: rgba(221, 221, 221, 0.26);
+    border: 0;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    margin-left: 5px;
+}
+
+.user-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+table .status{
+    font-size: 13px;
+    padding:1px 7px;
+    color: #FFF;
+    border-radius: 4px;
+}
+table .status.st-on{
+    background-color: rgba(40, 199, 111, 0.12);
+    color: #28c76f;
+}
+table .status.st-off{
+    background-color: rgba(234, 84, 85, 0.12);
+    color: #ea5455;
+}
+
+.head-user{
+    font-size: 22px;
+    color: #FFF;
+}
+.main-user{
+    font-family: 'IBM regular';
+}
+.btn-user{
+    font-family: 'IBM light';
+}
+.btn-add{
+    font-family: 'IBM semi';
+    border-radius: 7px;
+}
+
+
+/* Clear Bootstrap not Needed */
+.btn:focus,
+input:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus{
+    box-shadow: none;
+}

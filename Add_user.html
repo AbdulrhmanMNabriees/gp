@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vcode | Add User</title>
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+    
+    <!-- ***************** Start CSS Files ******************** -->
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/remixicon.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/font/font-fileuploader.css">
+    <link rel="stylesheet" href="dist/jquery.fileuploader.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <!-- ***************** End CSS Files ******************** -->
+</head>
+<body>
+    <!-- Loadin Page -->
+    <div class="loading-page">
+        <div class="loader"></div>
+    </div>
+    <!-- Wrapper Div  -->
+    <div class="wrapper">
+        <header class="page-header">
+            <div class="container">
+                <nav class="navbar">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.svg" width="36" height="auto" class="d-inline-block align-top" alt="LOGO">
+                        Vcode
+                    </a> <!-- Website Brand -->
+                    <div class="right-side ml-auto">
+                        <button class="btn pers-img">
+                            <img src="img/super-admin.png" alt="Profile Image">
+                        </button> <!-- Pofile Image -->
+                        <div class="menu-list">
+                            <h3 class="info">Karam Zomlut <br> <sapn class="job-name">Super Admin</sapn></h3>
+                            <ul class="list">
+                                <li class="item"><a href="#" class="item-link"><span class="ri-user-3-line icon"></span> <span class="item-name">My Profile</span></a></li>
+                                <li class="item"><a href="#" class="item-link"><span class="ri-logout-circle-line icon"></span> <span class="item-name">Log out</span></a></li>
+                            </ul>
+                        </div> <!-- Profile Image List -->
+                        <button class="btn menu-btn oc-toggle">
+                            <span class="ri-menu-line"></span>
+                        </button> <!-- Menu Button -->
+                    </div> <!-- End Right Side of Navbar -->
+                </nav> <!-- End Navabar -->
+                <aside class="sidebar">
+                    <div class="top-side">
+                        <h3 class="brand">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="img/logo.svg" width="36" height="auto" class="d-inline-block align-top" alt="LOGO">
+                                Vcode
+                            </a>
+                        </h3> <!-- Website Brand -->
+                        <button class="btn close-btn oc-toggle">
+                            <span class="ri-close-line icon"></span>
+                        </button> <!-- Close side button -->
+                    </div> <!-- End Top Side -->
+                    <div class="bottom-side">
+                        <ul class="side-list">
+                            <li class="item">
+                                <a href="index.html" class="item-link">
+                                    <span class="ri-home-line icon"></span>
+                                    <span class="link-name">Home</span>
+                                </a>
+                            </li> <!-- Single Item -->
+                            <li class="item">
+                                <a href="#" class="item-link dropdown-list">
+                                    <span class="ri-group-line icon"></span>
+                                    <span class="link-name">Users</span>
+                                    <span class="ri-arrow-right-s-line dr-icon"></span>
+                                </a>
+                                <ul class="n-list">
+                                    <li class="n-item">
+                                        <a href="Customers.html" class="item-link">
+                                            <span class="ri-list-check-2 icon"></span>
+                                            <span class="link-name">List of Customers</span>
+                                        </a>
+                                    </li> <!-- Single Item -->
+                                    <li class="n-item">
+                                        <a href="add_user.html" class="item-link">
+                                            <span class="ri-add-line icon"></span>
+                                            <span class="link-name">Add New Customer</span>
+                                        </a>
+                                    </li> <!-- Single Item -->
+                                    <li class="n-item">
+                                        <a href="#" class="item-link">
+                                            <span class="ri-list-check-2 icon"></span>
+                                            <span class="link-name">List of Admins</span>
+                                        </a>
+                                    </li> <!-- Single Item -->
+                                    <li class="n-item">
+                                        <a href="#" class="item-link">
+                                            <span class="ri-add-line icon"></span>
+                                            <span class="link-name">Add New Admin</span>
+                                        </a>
+                                    </li> <!-- Single Item -->
+                                </ul> <!-- End Nisted List -->
+                            </li> <!-- Single Item -->
+                            <li class="item">
+                                <a href="#" class="item-link dropdown-list">
+                                    <span class="ri-window-2-line icon"></span>
+                                    <span class="link-name">Templates</span>
+                                    <span class="ri-arrow-right-s-line dr-icon"></span>
+                                </a>
+                                <ul class="n-list">
+                                    <li class="n-item">
+                                        <a href="#" class="item-link">
+                                            <span class="ri-list-check-2 icon"></span>
+                                            <span class="link-name">List of Templates</span>
+                                        </a>
+                                    </li> <!-- Single Item -->
+                                    <li class="n-item">
+                                        <a href="add_template.html" class="item-link">
+                                            <span class="ri-add-line icon"></span>
+                                            <span class="link-name">Add New Template</span>
+                                        </a>
+                                    </li> <!-- Single Item -->
+                                </ul> <!-- End Nisted List -->
+                            </li> <!-- Single Item -->
+                            <li class="item">
+                                <a href="#" class="item-link dropdown-list">
+                                    <span class="ri-layout-masonry-line icon"></span>
+                                    <span class="link-name">Categories</span>
+                                    <span class="ri-arrow-right-s-line dr-icon"></span>
+                                </a>
+                                <ul class="n-list">
+                                    <li class="n-item">
+                                        <a href="Categories.html" class="item-link">
+                                            <span class="ri-list-check-2 icon"></span>
+                                            <span class="link-name">List of Categories</span>
+                                        </a>
+                                    </li> <!-- Single Item -->
+                                    <li class="n-item">
+                                        <a href="#" class="item-link">
+                                            <span class="ri-add-line icon"></span>
+                                            <span class="link-name">Add New Category</span>
+                                        </a>
+                                    </li> <!-- Single Item -->
+                                </ul> <!-- End Nisted List -->
+                            </li> <!-- Single Item -->
+                            <li class="item">
+                                <a href="#" class="item-link">
+                                    <span class="ri-settings-3-line icon"></span>
+                                    <span class="link-name">Setting</span>
+                                </a>
+                            </li> <!-- Single Item -->
+                            <li class="item">
+                                <a href="#" class="item-link">
+                                    <span class="ri-logout-circle-line icon"></span>
+                                    <span class="link-name">Log Out</span>
+                                </a>
+                            </li> <!-- Single Item -->
+                        </ul> <!-- End Side List -->
+                    </div> <!-- End Bottom Side -->
+                </aside> <!-- End Sidebar -->
+                <div class="overlay"></div> <!-- Overlay Div -->
+            </div>
+        </header> <!-- End Page Header -->
+        <div class="form-content">
+            <form class="form-user">
+                <div class="div-input">
+                    <h3 class="page-title text-center">Add New User</h3>
+    
+                    <label class="lab-name">Username</label>
+                    <input type="text" class="input-user" placeholder="Username" required>
+                    <div>
+                        <span class="fas fa-exclamation-triangle para-exist"> Username already exists</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-exclamation-triangle para-invalid"> Username should be at more than 3 characters</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-exclamation-triangle para-empty">  please fill all the required info</span>
+                    </div>
+                </div>
+                <div class="div-input">
+                    <label class="lab-name">Email Address</label>
+                    <input type="Email" class="input-user" placeholder="name@example.com" required>
+                    <div>
+                        <span class="fas fa-exclamation-triangle para-empty para-invalid">  Email is invalid</span>
+                    </div>
+                </div>
+                <div class="div-input">
+                    <label class="lab-name">Password</label>
+                    <input type="password" class="input-user" placeholder="************" required>
+                    <div>
+                        <span class="fas fa-exclamation-triangle para-empty para-invalid">  Password should be at least 8 characters</span>
+                    </div>
+                </div>
+                <div class="div-inp">
+                    <label class="lab-name">Confirm Password</label>
+                    <input class="input-user" type="password" placeholder="Confirm Password" required>
+                    <div>
+                        <span class="fas fa-exclamation-triangle para-empty para-invalid">  The password does not match the password</span>
+                    </div>
+                </div>
+                <div class="div-inp">
+                    <label class="lab-name">Account Type:</label>
+                    <input type="radio" name="customer" id="cust">
+                    <label for="purchaser" class="name-radio">Purchaser</label>
+                    <input type="radio" class="radio-seller" name="cust" id="Seller">
+                    <label for="Seller" class="name-radio">Seller</label>
+                    <div>
+                        <span class="fas fa-exclamation-triangle para-empty para-invalid">  This data is required</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="btn-add-user">Add</button>
+                </div> 
+            </form> <!-- End Add_User Page -->
+        </div> <!-- End Add_user Page-->
+    </div> <!-- End Wrapper Div -->
+
+ <!-- ***************** Start Js Files ******************** -->
+ <script src="js/jquery-3.6.0.min.js"></script>
+ <script src="js/bootstrap.bundle.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+ <script src="dist/jquery.fileuploader.min.js" type="text/javascript"></script>
+ <script src="js/charts.js"></script>
+ <script src="js/libraries.js"></script>
+ <script src="js/jquery.js"></script>
+ <!-- ***************** End Js Files ******************** -->
+</body>
+</html>
